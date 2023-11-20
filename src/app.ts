@@ -1,6 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import { mongoConnect } from "./utils/mongo.connect";
+import { mongoConnect } from "./services/mongo.connect";
+
+// Routes:
+import activityRoutes from "./routes/activity.routes";
 
 dotenv.config();
 
@@ -14,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes:
+app.use("/api/v1/activities", activityRoutes);
 
 // Default route:
 app.get("/", (req, res) => {

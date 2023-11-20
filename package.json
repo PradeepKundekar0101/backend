@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npm run build && node build/app.js",
+    "start": "node src/app.js",
     "dev": "npx nodemon",
     "build": "rimraf ./build && tsc"
   },
