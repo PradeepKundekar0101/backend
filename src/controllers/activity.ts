@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import catchAsync from "../utils/catchAsync.util";
-import { createActivity, getActivities } from "../services/activity.services";
-import { IActivity } from "../models/activity.model";
+import catchAsync from "../utils/catchAsync.";
+import { createActivity, getActivities } from "../services/activity";
+import { IActivity } from "../models/activity";
+import AppError from "../utils/AppError";
 
 // GET:
 export const getActivitiesController = catchAsync(
@@ -23,11 +24,7 @@ export const createActivityController = catchAsync(
     const { category, product, tags, videosWatched }: IActivity = req.body;
     // Validate body:
     if (!category || !product || !tags || !videosWatched) {
-      return res.status(400).json({
-        status: "fail",
-        message:
-          "Missing required fields: category, product, tags, videosWatched",
-      });
+      return next(new AppError(400, "Please provide all required fields."));
     }
 
     const activity = await createActivity(req.body);

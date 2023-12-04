@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
-import activityRoutes from "./routes/activity.routes";
+import activityRoutes from "./routes/activity";
+import globalErrorHandler from "./controllers/error";
+import { errorInterceptor } from "./middlewares/logger";
 
 dotenv.config();
 
@@ -23,6 +25,10 @@ app.use("/api/v1/activities", activityRoutes);
 app.get("/", (req, res) => {
   res.send("Second Shorts API");
 });
+
+// Global Error Handler:
+app.use(errorInterceptor);
+app.use(globalErrorHandler);
 
 // Port:
 const PORT = process.env.PORT || 3000;
