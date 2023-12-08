@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import catchAsync from "../utils/catchAsync.";
+import { catchAsync, sendResponse } from "../utils/api.utils";
 import { createActivity, getActivities } from "../services/activity";
 import { IActivity } from "../models/activity";
 import AppError from "../utils/AppError";
@@ -9,12 +9,7 @@ export const getActivitiesController = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const activities = await getActivities();
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        activities,
-      },
-    });
+    sendResponse(res, 200, { activities });
   }
 );
 
@@ -29,11 +24,6 @@ export const createActivityController = catchAsync(
 
     const activity = await createActivity(req.body);
 
-    res.status(201).json({
-      status: "success",
-      data: {
-        activity,
-      },
-    });
+    sendResponse(res, 201, { activity });
   }
 );

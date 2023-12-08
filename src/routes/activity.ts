@@ -9,6 +9,7 @@ const router = Router();
 
 // Middlewares:
 router.use(responseInterceptor);
+
 // GET:
 router.get("/", getActivitiesController);
 

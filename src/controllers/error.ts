@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import AppError from "../utils/AppError";
-import { MongooseError } from "mongoose";
-import { errorLogger } from "../utils/logger";
+import mongoose from "mongoose";
 
 // TODO: Need to handle error types:
 // Handle CastError:
@@ -53,15 +52,19 @@ const globalErrorHandler = (
   res: Response,
   next: NextFunction
 ) => {
+  console.log("Global Error Handler");
+  console.log(err);
   let error = { ...err };
   error.message = err.message;
   error.stack = err.stack;
   // Handle CastError:
-  if (error.name === "CastError") error = handleCastErrorDB(error);
+  if (error instanceof mongoose.Error.CastError)
+    error = handleCastErrorDB(error);
   // Handle Duplicate Fields:
   if (error.code === 11000) error = handleDuplicateFieldsDB(error);
   // Handle Validation Errors:
-  if (error.name === "ValidationError") error = handleValidationErrorDB(error);
+  if (error instanceof mongoose.Error.ValidationError)
+    error = handleValidationErrorDB(error);
 
   if (process.env.NODE_ENV === "development") {
     sendErrDev(error, res);
