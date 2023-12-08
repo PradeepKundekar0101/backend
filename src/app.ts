@@ -4,6 +4,7 @@ import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
 import activityRoutes from "./routes/activity";
+import categoryRoutes from "./routes/category";
 import globalErrorHandler from "./controllers/error";
 import { errorInterceptor } from "./middlewares/logger";
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes:
 app.use("/api/v1/activities", activityRoutes);
+app.use("/api/v1/category", categoryRoutes);
 
 // Default route:
 app.get("/", (req, res) => {
