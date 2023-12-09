@@ -1,4 +1,5 @@
 import Category, { ICategory } from "../models/category";
+import AppError from "../utils/AppError";
 
 class CategoryService {
   async createCategory(categoryData: ICategory): Promise<ICategory> {
@@ -28,9 +29,11 @@ class CategoryService {
     return category;
   }
 
-  async deleteCategory(categoryId: string): Promise<ICategory | null> {
+  async deleteCategory(categoryId: string): Promise<void> {
     const category = await Category.findByIdAndDelete(categoryId);
-    return category;
+
+    if (!category)
+      throw new AppError(404, `Category with id ${categoryId} not found`);
   }
 }
 
