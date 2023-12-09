@@ -28,12 +28,38 @@ app.get("/", (req, res) => {
   res.send("Second Shorts API");
 });
 
+// Unhandled Routes:
+app.all("*", (req, res, next) => {
+  res.status(404).json({
+    status: "fail",
+    message: `Can't find ${req.originalUrl} on this server`,
+  });
+});
+
 // Global Error Handler:
 app.use(errorInterceptor);
 app.use(globalErrorHandler);
+
+// Uncaught Exception:
+process.on("uncaughtException", (err: any) => {
+  console.log("Uncaught Exception, shutting down...");
+  console.log(err.name, err.message);
+  process.exit(1);
+});
 
 // Port:
 const PORT = process.env.PORT || 3000;
 
 // Listen:
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const server = app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
+);
+
+// Unhandled Rejection:
+process.on("unhandledRejection", (err: any) => {
+  console.log("Unhandled Rejection, shutting down...");
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
+});

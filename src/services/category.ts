@@ -28,8 +28,9 @@ class CategoryService {
     return category;
   }
 
-  async deleteCategory(categoryId: string): Promise<void> {
-    await Category.findByIdAndDelete(categoryId);
+  async deleteCategory(categoryId: string): Promise<ICategory | null> {
+    const category = await Category.findByIdAndDelete(categoryId);
+    return category;
   }
 }
 
