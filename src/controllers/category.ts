@@ -22,7 +22,6 @@ export const createCategory = catchAsync(
 export const getAllCategories = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const categories = await categoryService.getAllCategories();
-
     sendResponse(res, 200, { categories });
   }
 );
