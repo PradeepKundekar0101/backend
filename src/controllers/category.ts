@@ -6,12 +6,6 @@ import categoryService from "../services/category";
 // Create a new category:
 export const createCategory = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const { name, image_url } = req.body;
-
-    if (!name || !image_url) {
-      return next(new AppError(400, "Please provide name and image_url"));
-    }
-
     const category = await categoryService.createCategory(req.body);
 
     sendResponse(res, 201, { category });

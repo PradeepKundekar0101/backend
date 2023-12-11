@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
-import activityRoutes from "./routes/activity";
 import categoryRoutes from "./routes/category";
+import analyticsRoutes from "./routes/analytics";
 import globalErrorHandler from "./controllers/error";
 import { errorInterceptor } from "./middlewares/logger";
 
@@ -20,8 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes:
-app.use("/api/v1/activities", activityRoutes);
 app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/analytics", analyticsRoutes);
 
 // Default route:
 app.get("/", (req, res) => {

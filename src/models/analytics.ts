@@ -1,4 +1,5 @@
 import mongoose, { Schema, model, ObjectId } from "mongoose";
+import validator from "validator";
 
 export interface IVideoAnalytics {
   videoId: ObjectId;
@@ -24,7 +25,6 @@ export interface IAnalytics {
   productSelected: ObjectId;
   tagsSelected: ObjectId[];
   videosWatched: IVideoAnalytics[];
-  wasHelpful: boolean;
   customerSupportMetadata: ICustomerSupportMetadata;
   createdAt?: Date;
   updatedAt?: Date;
@@ -51,6 +51,9 @@ const videoAnalyticsSchema = new Schema<IVideoAnalytics>({
   completionRatio: {
     type: Number,
     required: [true, "Video completion ratio is required"],
+    // should not be less than 0 or greater than 1
+    min: [0, "Completion ratio should not be less than 0"],
+    max: [1, "Completion ratio should not be greater than 1"],
   },
   wasHelpful: {
     type: Boolean,
@@ -71,6 +74,7 @@ const customerSupportMetadataSchema = new Schema<ICustomerSupportMetadata>({
   email: {
     type: String,
     required: [true, "Email is required"],
+    validate: [validator.isEmail, "Please provide a valid email"],
   },
   description: {
     type: String,
@@ -83,6 +87,7 @@ const AnalyticsSchema = new Schema<IAnalytics>(
     sessionId: {
       type: String,
       required: [true, "Session ID is required"],
+      validate: [validator.isIP, "Please provide a valid IP address"],
     },
     timeOnSite: {
       type: Number,
@@ -112,11 +117,6 @@ const AnalyticsSchema = new Schema<IAnalytics>(
       type: [videoAnalyticsSchema],
       default: [],
       required: [true, "Videos watched are required"],
-    },
-    wasHelpful: {
-      type: Boolean,
-      default: false,
-      required: [true, "Process Helpfulness is required"],
     },
     customerSupportMetadata: {
       type: customerSupportMetadataSchema,

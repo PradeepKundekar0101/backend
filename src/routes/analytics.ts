@@ -1,19 +1,17 @@
 import { Router } from "express";
 import { responseInterceptor } from "../middlewares/logger";
 import {
-  getActivitiesController,
-  createActivityController,
-} from "../controllers/activity";
+  createAnalytics,
+  getVideosSuggestions,
+} from "../controllers/analytics";
 
 const router = Router();
 
 // Middlewares:
 router.use(responseInterceptor);
 
-// GET:
-router.get("/", getActivitiesController);
-
-// POST:
-router.post("/", createActivityController);
+// Routes:
+router.post("/", createAnalytics);
+router.get("/suggestions", getVideosSuggestions);
 
 export default router;

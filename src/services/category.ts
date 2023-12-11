@@ -1,5 +1,5 @@
-import Category, { ICategory } from "../models/category";
 import AppError from "../utils/AppError";
+import Category, { ICategory } from "../models/category";
 
 class CategoryService {
   async createCategory(categoryData: ICategory): Promise<ICategory> {
