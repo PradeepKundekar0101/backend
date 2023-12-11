@@ -17,10 +17,7 @@ class CategoryService {
     return category;
   }
 
-  async updateCategory(
-    categoryId: string,
-    categoryData: ICategory
-  ): Promise<ICategory | null> {
+  async updateCategory( categoryId: string, categoryData: ICategory ): Promise<ICategory | null> {
     const category = await Category.findByIdAndUpdate(
       categoryId,
       categoryData,

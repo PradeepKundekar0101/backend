@@ -5,6 +5,8 @@ import { mongoConnect } from "./services/mongo.connect";
 // Routes:
 import categoryRoutes from "./routes/category";
 import analyticsRoutes from "./routes/analytics";
+import productRoutes from "./routes/product";
+import videoRoutes from "./routes/video";
 import globalErrorHandler from "./controllers/error";
 import { errorInterceptor } from "./middlewares/logger";
 
@@ -22,6 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 // Routes:
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
+app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/video", videoRoutes);
 
 // Default route:
 app.get("/", (req, res) => {
