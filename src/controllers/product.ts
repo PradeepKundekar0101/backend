@@ -14,7 +14,8 @@ export const createProduct = catchAsync(
 // Get all products
 export const getAllProducts = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const products = await ProductService.getAllProducts();
+    const queryParams = req.query;
+    const products = await ProductService.getAllProducts(queryParams);
     sendResponse(res, 201, { products });
   }
 );

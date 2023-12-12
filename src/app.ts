@@ -28,6 +28,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/helpdesk", helpdeskRoutes);
+app.use("/api/v1/video",videoRoutes)
 
 // Default route:
 app.get("/", (req, res) => {

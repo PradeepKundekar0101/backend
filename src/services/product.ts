@@ -12,8 +12,11 @@ class ProductService {
   }
 
   //Function to get all products
-  async getAllProducts(): Promise<IProduct[]> {
-    const products = await Product.find();
+  async getAllProducts(queryParams?:any): Promise<IProduct[]> {
+    let productQuery = Product.find();
+    if(queryParams && queryParams.category) 
+      productQuery = productQuery.where("category").equals(queryParams.category);
+    const products =await productQuery.exec();
     return products;
   }
 
