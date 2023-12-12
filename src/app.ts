@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
-import activityRoutes from "./routes/activity";
 import categoryRoutes from "./routes/category";
-import productRoutes from './routes/product'
-import videoRoutes from './routes/video'
+import analyticsRoutes from "./routes/analytics";
+import productRoutes from "./routes/product";
+import videoRoutes from "./routes/video";
 import globalErrorHandler from "./controllers/error";
 import { errorInterceptor } from "./middlewares/logger";
 
@@ -22,10 +22,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes:
-app.use("/api/v1/activities", activityRoutes);
 app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
-app.use("/api/v1/video",videoRoutes );
+app.use("/api/v1/video", videoRoutes);
 
 // Default route:
 app.get("/", (req, res) => {
