@@ -4,6 +4,7 @@ import {createProduct,deleteProduct,getAllProducts, getProductById, updateProduc
 
 const router = Router();
 
+
 router.use(responseInterceptor);
 
 //Product routes

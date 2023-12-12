@@ -13,6 +13,7 @@ const router = Router();
 // Middlewares:
 router.use(responseInterceptor);
 
+// Category routes:
 router.post("/", createCategory);
 router.get("/", getAllCategories);
 router.get("/:categoryId", getCategoryById);

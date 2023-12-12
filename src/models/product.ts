@@ -1,5 +1,4 @@
-
-import mongoose, { Schema, model, ObjectId, Types } from "mongoose";
+import mongoose, { Schema, model, ObjectId } from "mongoose";
 export interface IProduct {
   name: string;
   image_url: string;

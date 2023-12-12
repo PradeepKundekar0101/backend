@@ -1,7 +1,11 @@
 import { Router } from "express";
 import { responseInterceptor } from "../middlewares/logger";
 import {
-  createVideos, deleteVideo, getAllVideos, getAllVideosByProductId
+  createVideos,
+  deleteVideo,
+  getAllVideos,
+  getAllVideosByProductId,
+  getVideosSuggestions,
 } from "../controllers/video";
 
 const router = Router();
@@ -10,8 +14,9 @@ const router = Router();
 router.use(responseInterceptor);
 
 router.post("/", createVideos);
-router.get("/",getAllVideos);
-router.get("/:productId",getAllVideosByProductId);
-router.delete("/:videoId",deleteVideo);
+router.get("/", getAllVideos);
+router.get("/suggestions", getVideosSuggestions);
+router.get("/:productId", getAllVideosByProductId);
+router.delete("/:videoId", deleteVideo);
 
 export default router;
