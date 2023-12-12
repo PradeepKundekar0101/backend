@@ -1,6 +1,7 @@
 import mongoose, { ObjectId, Schema, model } from "mongoose";
 
 export interface IVideo {
+  _id: string;
   videoId: string;
   productId: ObjectId;
   tags: ObjectId[];

@@ -23,13 +23,10 @@ export const getAllProducts = catchAsync(
 export const getProductById = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { productId } = req.params;
-
     if (!productId) {
       return next(new AppError(400, "Please provide Product Id"));
     }
-
     const product = await ProductService.getProduct(productId);
-
     if (!product) {
       return next(new AppError(404, `Product with id ${productId} not found`));
     }
@@ -42,15 +39,9 @@ export const updateProductWithTags = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const productId = req.params.productId;
     const tags = req.body.tags;
-
-    if (!productId) {
-      return next(new AppError(400, "Please provide productId"));
-    }
-    
-    if (!tags || tags.length == 0) {
+    if (tags.length == 0) {
       return next(new AppError(400, "Please provide tags for the product"));
     }
-    
     const updatedProduct = await ProductService.updateProductWithTags(
       productId,
       tags

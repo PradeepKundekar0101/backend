@@ -1,17 +1,24 @@
 import mongoose, { PipelineStage } from "mongoose";
-import Analytics from "../models/analytics";
 import Video, { IVideo } from "../models/video";
+import Analytics from "../models/analytics";
 
 class VideoService {
+
   async createVideo(videoData: IVideo): Promise<IVideo> {
     const video = await Video.create(videoData);
     return video;
   }
 
-  async getVideosByProductId(productId: string): Promise<IVideo[]> {
-    const videos = await Video.find({ productId });
+  async getVideosByProductId(productId:string): Promise<IVideo[]> {
+    const videos = await Video.find({productId});
     return videos;
   }
+
+  async getVideoById(videoId:string): Promise<IVideo | null> {
+    const video = await Video.findById(videoId);
+    return video;
+  }
+
   async getAllVideos(): Promise<IVideo[]> {
     const videos = await Video.find();
     return videos;

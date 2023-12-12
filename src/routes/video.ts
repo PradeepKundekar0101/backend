@@ -5,6 +5,7 @@ import {
   deleteVideo,
   getAllVideos,
   getAllVideosByProductId,
+  getVideoById,
   getVideosSuggestions,
 } from "../controllers/video";
 
@@ -17,6 +18,10 @@ router.post("/", createVideos);
 router.get("/", getAllVideos);
 router.get("/suggestions", getVideosSuggestions);
 router.get("/:productId", getAllVideosByProductId);
+router.delete("/:videoId", deleteVideo);
+router.get("/", getAllVideos);
+router.get("/:videoId", getVideoById);
+router.get("/product/:productId", getAllVideosByProductId);
 router.delete("/:videoId", deleteVideo);
 
 export default router;

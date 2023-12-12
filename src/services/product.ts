@@ -2,6 +2,7 @@ import mongoose, { ObjectId, Types } from "mongoose";
 import Product, { IProduct } from "../models/product";
 import Tag, { ITag } from "../models/tag";
 import AppError from "../utils/AppError";
+import video from "./video";
 
 class ProductService {
   //Function to create Product
@@ -57,15 +58,24 @@ class ProductService {
   }
 
   // Function to delete a Product
-  async deleteProduct(productId: string): Promise<IProduct | null> {
+  async deleteProduct(
+    productId: string
+  ): Promise<IProduct | null> {
     const product = await Product.findById(productId);
-    if (!product) {
-      throw new AppError(400, "Product not found");
-    }
+    if (!product) return null;
+
     //Delete all the tags related to product
     for (const tag of product.tags) {
-      const deletedTag = await Tag.findByIdAndDelete(tag);
+      await Tag.findByIdAndDelete(tag);
     }
+
+    const videosOfProductToBeDeleted = await video.getVideosByProductId(
+      productId
+    );
+    for (const vid of videosOfProductToBeDeleted) {
+      await video.deleteVideo(vid._id);
+    }
+
     const deleteProduct = await Product.findByIdAndDelete(productId);
     return deleteProduct;
   }

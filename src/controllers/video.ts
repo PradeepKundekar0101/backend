@@ -71,6 +71,19 @@ export const getAllVideosByProductId = catchAsync(
   }
 );
 
+//Get video By ID
+export const getVideoById = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { videoId } = req.params;
+    if (!videoId) {
+      return next(new AppError(400, "Please videoId"));
+    }
+    const video = await videoService.getVideoById(videoId);
+    if (!video) sendResponse(res, 404, {});
+    sendResponse(res, 200, { video });
+  }
+);
+
 // Get videos suggestions:
 export const getVideosSuggestions = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
