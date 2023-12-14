@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/video", videoRoutes);
 app.use("/api/v1/helpdesk", helpdeskRoutes);
 
 // Default route:
