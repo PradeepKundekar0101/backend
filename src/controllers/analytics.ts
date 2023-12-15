@@ -31,3 +31,14 @@ export const getCategoryStatsById = catchAsync(
     sendResponse(res, 200, { categoryStats });
   }
 );
+
+// Get Specific Product Stats:
+export const getProductStatsById = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const productStats = await analyticsService.getProductStatsById(
+      req.params.productId
+    );
+
+    sendResponse(res, 200, { productStats });
+  }
+);
