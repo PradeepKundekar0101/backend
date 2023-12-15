@@ -8,7 +8,10 @@ import validator from "validator";
 export const createVideos = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { videos } = req.body;
-    if (videos.length == 0) {
+
+    console.log(req.body);
+
+    if (!videos || videos.length == 0) {
       return next(new AppError(400, "Please provide atleast one video"));
     }
     let response = [];
