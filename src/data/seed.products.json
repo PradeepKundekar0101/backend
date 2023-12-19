@@ -1,0 +1,200 @@
+[{
+  "_id": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "name": "Airdope 131",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "tags": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:15:30.872Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:31:20.357Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "name": "Airdope 171",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "tags": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:15:40.306Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:31:56.830Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "657840e38074793581c7b6e6"
+  },
+  "name": "Airdope 191",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "tags": [],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:15:47.457Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:15:47.457Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "name": "Rockerz 440",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "tags": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:17:08.465Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:32:37.166Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "657841388074793581c7b6ea"
+  },
+  "name": "Rockerz 540",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "tags": [
+    {
+      "$oid": "657844fe165caa7d4c17e519"
+    },
+    {
+      "$oid": "657844fe165caa7d4c17e51c"
+    },
+    {
+      "$oid": "657844fe165caa7d4c17e51f"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:17:12.752Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:33:18.432Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "6578415d8074793581c7b6ec"
+  },
+  "name": "Stone 1300",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840a28074793581c7b6e0"
+  },
+  "tags": [
+    {
+      "$oid": "65784520165caa7d4c17e524"
+    },
+    {
+      "$oid": "65784520165caa7d4c17e527"
+    },
+    {
+      "$oid": "65784520165caa7d4c17e52a"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:17:49.514Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:33:52.370Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "657841618074793581c7b6ee"
+  },
+  "name": "Stone 1500",
+  "image_url": "sampleimage.jpg",
+  "category": {
+    "$oid": "657840a28074793581c7b6e0"
+  },
+  "tags": [
+    {
+      "$oid": "6578453d165caa7d4c17e52f"
+    },
+    {
+      "$oid": "6578453d165caa7d4c17e532"
+    }
+  ],
+  "is_active": false,
+  "is_discontinued": false,
+  "createdAt": {
+    "$date": "2023-12-12T11:17:53.524Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:34:21.342Z"
+  },
+  "__v": 1
+}]

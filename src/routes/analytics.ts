@@ -4,6 +4,7 @@ import {
   createAnalytics,
   getAllCategoryStats,
   getCategoryStatsById,
+  getOverallStats,
   getProductStatsById,
 } from "../controllers/analytics";
 
@@ -14,6 +15,7 @@ router.use(responseInterceptor);
 
 // Routes:
 router.post("/", createAnalytics);
+router.get("/overall", getOverallStats);
 router.get("/category", getAllCategoryStats);
 router.get("/category/:categoryId", getCategoryStatsById);
 router.get("/product/:productId", getProductStatsById);

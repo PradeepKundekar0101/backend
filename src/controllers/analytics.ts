@@ -12,6 +12,34 @@ export const createAnalytics = catchAsync(
   }
 );
 
+// Get overall stats:
+export const getOverallStats = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    let { from, to } = req.query;
+
+    // Check if from and to are valid dates:
+    const fromDate = from
+      ? new Date(Number(from))
+      : new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const toDate = to ? new Date(Number(to)) : new Date(Date.now());
+
+    if (fromDate.toString() === "Invalid Date") {
+      return next(new AppError(400, "Please provide a valid from date"));
+    }
+
+    if (toDate.toString() === "Invalid Date") {
+      return next(new AppError(400, "Please provide a valid to date"));
+    }
+
+    const overAllStats = await analyticsService.getOverallStats(
+      fromDate,
+      toDate
+    );
+
+    sendResponse(res, 200, { overAllStats });
+  }
+);
+
 // Get category stats:
 export const getAllCategoryStats = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {

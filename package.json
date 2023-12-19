@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "set NODE_ENV=production && node build/src/app.js",
     "dev": "npx nodemon",
-    "build": "rimraf ./build && tsc"
+    "build": "rimraf ./build && npx tsc"
   },
   "keywords": [],
   "author": "",
