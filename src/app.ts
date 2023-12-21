@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
@@ -23,13 +24,20 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// CORS:
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 // Routes:
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/video", videoRoutes);
 app.use("/api/v1/helpdesk", helpdeskRoutes);
-app.use("/api/v1/video",videoRoutes)
+app.use("/api/v1/video", videoRoutes);
 
 // Default route:
 app.get("/", (req, res) => {

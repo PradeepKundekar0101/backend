@@ -12,11 +12,13 @@ class ProductService {
   }
 
   //Function to get all products
-  async getAllProducts(queryParams?:any): Promise<IProduct[]> {
+  async getAllProducts(queryParams?: any): Promise<IProduct[]> {
     let productQuery = Product.find();
-    if(queryParams && queryParams.category) 
-      productQuery = productQuery.where("category").equals(queryParams.category);
-    const products =await productQuery.exec();
+    if (queryParams && queryParams.category)
+      productQuery = productQuery
+        .where("category")
+        .equals(queryParams.category);
+    const products = await productQuery.exec();
     return products;
   }
 
@@ -33,7 +35,7 @@ class ProductService {
   ): Promise<IProduct | null> {
     const updatedProduct = await Product.findByIdAndUpdate(
       productId,
-      { productData },
+      productData,
       { new: true }
     );
     return updatedProduct;
@@ -61,9 +63,7 @@ class ProductService {
   }
 
   // Function to delete a Product
-  async deleteProduct(
-    productId: string
-  ): Promise<IProduct | null> {
+  async deleteProduct(productId: string): Promise<IProduct | null> {
     const product = await Product.findById(productId);
     if (!product) return null;
 

@@ -12,6 +12,15 @@ export const createAnalytics = catchAsync(
   }
 );
 
+// Get Dashboard Stats:
+export const getDashboardStats = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const dashboardStats = await analyticsService.getDashboardStats();
+
+    sendResponse(res, 200, { dashboardStats });
+  }
+);
+
 // Get overall stats:
 export const getOverallStats = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -29,6 +38,12 @@ export const getOverallStats = catchAsync(
 
     if (toDate.toString() === "Invalid Date") {
       return next(new AppError(400, "Please provide a valid to date"));
+    }
+
+    if (fromDate > toDate) {
+      return next(
+        new AppError(400, "From date cannot be greater than to date")
+      );
     }
 
     const overAllStats = await analyticsService.getOverallStats(

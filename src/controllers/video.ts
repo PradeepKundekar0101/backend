@@ -48,7 +48,7 @@ export const deleteVideo = catchAsync(
     }
     const video = await videoService.deleteVideo(videoId);
     if (!video) {
-      return next(new AppError(404, `Video with id ${video} not found`));
+      return next(new AppError(404, `Video with id ${videoId} not found`));
     }
     res.status(204).json({ video });
   }

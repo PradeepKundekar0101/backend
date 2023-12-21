@@ -26,11 +26,12 @@ const ProductSchema = new Schema<IProduct>(
       ref: "Category",
       required: [true, "Category is required"],
     },
-    tags: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: "Tag",
-      default: [],
-    },
+    tags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag",
+      },
+    ],
     is_active: {
       type: Boolean,
       default: false,
@@ -44,6 +45,16 @@ const ProductSchema = new Schema<IProduct>(
     timestamps: true,
   }
 );
+
+// Populate the tags field:
+ProductSchema.pre(/^find/, function (next) {
+  // @ts-ignore
+  this.populate({
+    path: "tags",
+    select: "-__v",
+  });
+  next();
+});
 
 const Product = model<IProduct>("Product", ProductSchema);
 

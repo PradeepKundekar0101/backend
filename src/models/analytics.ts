@@ -127,6 +127,26 @@ const AnalyticsSchema = new Schema<IAnalytics>(
   }
 );
 
+// Populate the fields:
+AnalyticsSchema.pre(/^find/, function (next) {
+  // @ts-ignore
+  this.populate({
+    path: "categorySelected",
+    select: "-__v",
+  });
+  // @ts-ignore
+  this.populate({
+    path: "productSelected",
+    select: "-__v",
+  });
+  // @ts-ignore
+  this.populate({
+    path: "tagsSelected",
+    select: "-__v",
+  });
+  next();
+});
+
 const Analytics = model<IAnalytics>("Analytics", AnalyticsSchema);
 
 export default Analytics;

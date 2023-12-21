@@ -1,17 +1,29 @@
-import AppError from "../utils/AppError";
 import Analytics, { IAnalytics } from "../models/analytics";
-import mongoose, { PipelineStage } from "mongoose";
 import Category from "../models/category";
 import Product from "../models/product";
 import { allCategoryStatsPipeline } from "./pipelines/analytics/allCategoryStats";
 import { specificCategoryStatsPipeline } from "./pipelines/analytics/specificCategoryStats";
 import { specificProductStatsPipeline } from "./pipelines/analytics/specificProductStats";
 import { overallStatsPipeline } from "./pipelines/analytics/overallStats";
+import { dashboardStatsPipeline } from "./pipelines/analytics/dashboardStats";
 
 class AnalyticsServices {
   async createAnalytics(analyticsData: IAnalytics): Promise<IAnalytics> {
     const analytics = await Analytics.create(analyticsData);
     return analytics;
+  }
+
+  // Get Dashboard Stats:
+  async getDashboardStats(): Promise<any> {
+    const dashboardStats = await Analytics.aggregate(dashboardStatsPipeline());
+
+    // Get total categories, products and videos watched:
+    const totalCategories = await Category.countDocuments();
+    const totalProducts = await Product.countDocuments();
+
+    // Get total videos watched:
+
+    return { ...dashboardStats[0], totalCategories, totalProducts };
   }
 
   // Get Overall Stats:
@@ -26,7 +38,6 @@ class AnalyticsServices {
     );
     overallStats[0]?.productsSelected.sort((a: any, b: any) => b.freq - a.freq);
     overallStats[0]?.locations.sort((a: any, b: any) => b.freq - a.freq);
-    overallStats[0]?.tagsSelected.sort((a: any, b: any) => b.freq - a.freq);
     overallStats[0]?.videosWatched.sort(
       (a: any, b: any) => b.totalViews - a.totalViews
     );

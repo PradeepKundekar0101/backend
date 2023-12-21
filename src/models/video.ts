@@ -21,16 +21,28 @@ const VideoSchema = new Schema<IVideo>(
       ref: "Product",
       required: [true, "Product is required"],
     },
-    tags: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: "Tag",
-      default: [],
-    },
+    tags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
+
+// VideoSchema.index({ productId: 1, tags: 1 });
+
+VideoSchema.pre(/^find/, function (next) {
+  // @ts-ignore
+  this.populate({
+    path: "tags",
+    select: "-__v",
+  });
+  next();
+});
 
 const Video = model<IVideo>("Video", VideoSchema);
 

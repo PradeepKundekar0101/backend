@@ -56,10 +56,12 @@ export const updateProductWithTags = catchAsync(
 export const updateProduct = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { productId } = req.params;
+
     if (!productId) {
       return next(new AppError(400, "Please provide productId"));
     }
     const product = await ProductService.updateProduct(productId, req.body);
+
     if (!product) {
       return next(new AppError(404, `Product with id ${productId} not found`));
     }

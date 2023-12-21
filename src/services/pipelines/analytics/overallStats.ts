@@ -3,7 +3,7 @@ import { PipelineStage } from "mongoose";
 export const overallStatsPipeline = (from: Date, to: Date) => {
   const statsAggPipeline: PipelineStage[] = [];
 
-  // Match analytics in last 7 days:
+  // Match analytics in the time range:
   statsAggPipeline.push({
     $match: {
       createdAt: {
@@ -13,7 +13,7 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
     },
   });
 
-  // Get stats of last 7 days:
+  // Get stats:
   statsAggPipeline.push(
     {
       $group: {
@@ -26,9 +26,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $push: "$categorySelected" },
         productsSelected: { $push: "$productSelected" },
         totalTicketsRaised: { $addToSet: "$customerSupportMetadata" },
-        tagsSelected: {
-          $addToSet: "$tagsSelected",
-        },
         videosWatched: {
           $addToSet: "$videosWatched",
         },
@@ -62,7 +59,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $push: "$categoriesSelected" },
         locations: { $first: "$locations" },
         productsSelected: { $first: "$productsSelected" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $first: "$videosWatched" },
       },
     },
@@ -90,7 +86,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         },
         locations: { $first: "$locations" },
         productsSelected: { $first: "$productsSelected" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $first: "$videosWatched" },
       },
     }
@@ -111,7 +106,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $first: "$categoriesSelected" },
         productsSelected: { $push: "$productsSelected" },
         locations: { $first: "$locations" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $first: "$videosWatched" },
       },
     },
@@ -139,59 +133,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
           },
         },
         locations: { $first: "$locations" },
-        tagsSelected: { $first: "$tagsSelected" },
-        videosWatched: { $first: "$videosWatched" },
-      },
-    }
-  );
-
-  // Unwind and Populate the tags selected:
-  statsAggPipeline.push(
-    {
-      $unwind: "$tagsSelected",
-    },
-    {
-      $unwind: "$tagsSelected",
-    },
-    {
-      $group: {
-        _id: {
-          _id: "$_id",
-          tag: "$tagsSelected",
-        },
-        stats: { $first: "$stats" },
-        categoriesSelected: { $first: "$categoriesSelected" },
-        productsSelected: { $first: "$productsSelected" },
-        locations: { $first: "$locations" },
-        tagsSelected: { $push: "$tagsSelected" },
-        videosWatched: { $first: "$videosWatched" },
-      },
-    },
-    {
-      $lookup: {
-        from: "tags",
-        localField: "_id.tag",
-        foreignField: "_id",
-        as: "tagDetails",
-      },
-    },
-    {
-      $unwind: "$tagDetails",
-    },
-    {
-      $group: {
-        _id: "$_id._id",
-        stats: { $first: "$stats" },
-        categoriesSelected: { $first: "$categoriesSelected" },
-        productsSelected: { $first: "$productsSelected" },
-        locations: { $first: "$locations" },
-        tagsSelected: {
-          $push: {
-            tag: "$_id.tag",
-            name: "$tagDetails.name",
-            freq: { $size: "$tagsSelected" },
-          },
-        },
         videosWatched: { $first: "$videosWatched" },
       },
     }
@@ -215,7 +156,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $first: "$categoriesSelected" },
         productsSelected: { $first: "$productsSelected" },
         locations: { $first: "$locations" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $push: "$videosWatched" },
       },
     },
@@ -237,7 +177,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $first: "$categoriesSelected" },
         productsSelected: { $first: "$productsSelected" },
         locations: { $first: "$locations" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: {
           $push: {
             _id: "$_id.videoId",
@@ -282,7 +221,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
         categoriesSelected: { $first: "$categoriesSelected" },
         productsSelected: { $first: "$productsSelected" },
         locations: { $push: "$locations" },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $first: "$videosWatched" },
       },
     },
@@ -298,7 +236,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
             freq: { $size: "$locations" },
           },
         },
-        tagsSelected: { $first: "$tagsSelected" },
         videosWatched: { $first: "$videosWatched" },
       },
     }
@@ -336,7 +273,6 @@ export const overallStatsPipeline = (from: Date, to: Date) => {
       categoriesSelected: 1,
       productsSelected: 1,
       locations: 1,
-      tagsSelected: 1,
       videosWatched: 1,
     },
   });

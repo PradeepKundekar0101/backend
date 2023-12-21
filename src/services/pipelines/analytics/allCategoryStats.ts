@@ -49,6 +49,7 @@ export const allCategoryStatsPipeline = () => {
       productsWithIssues: { $addToSet: "$analytics.productSelected" },
       totalVisitors: { $addToSet: "$analytics.sessionId" },
       avgTimeOnSite: { $avg: "$analytics.timeOnSite" },
+      ticketsRaised: { $addToSet: "$analytics.customerSupportMetadata" },
     },
   });
 
@@ -62,6 +63,24 @@ export const allCategoryStatsPipeline = () => {
       category: 1,
       totalVisitors: { $size: "$totalVisitors" },
       avgTimeOnSite: 1,
+      totalTicketsRaised: { $size: "$ticketsRaised" },
+    },
+  });
+
+  // Calculate the system efficiency:
+  statsAggPipeline.push({
+    $addFields: {
+      systemEfficiency: {
+        $multiply: [
+          {
+            $divide: [
+              { $subtract: ["$totalIssues", "$totalTicketsRaised"] },
+              "$totalIssues",
+            ],
+          },
+          100,
+        ],
+      },
     },
   });
 
@@ -72,6 +91,7 @@ export const allCategoryStatsPipeline = () => {
       productsWithIssues: -1,
       totalVisitors: -1,
       avgTimeOnSite: -1,
+      systemEfficiency: -1,
     },
   });
 
