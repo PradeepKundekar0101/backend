@@ -1,9 +1,10 @@
-import express from "express";
+import express, { response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { mongoConnect } from "./services/mongo.connect";
 
 // Routes:
+import tagRoutes from "./routes/tag";
 import categoryRoutes from "./routes/category";
 import analyticsRoutes from "./routes/analytics";
 import productRoutes from "./routes/product";
@@ -11,7 +12,8 @@ import videoRoutes from "./routes/video";
 import helpdeskRoutes from "./routes/helpdesk";
 
 import globalErrorHandler from "./controllers/error";
-import { errorInterceptor } from "./middlewares/logger";
+import { errorInterceptor, responseInterceptor } from "./middlewares/logger";
+import path from "path";
 
 dotenv.config();
 
@@ -32,6 +34,8 @@ app.use(
 );
 
 // Routes:
+app.use(responseInterceptor);
+app.use("/api/v1/tag", tagRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
@@ -42,6 +46,15 @@ app.use("/api/v1/video", videoRoutes);
 // Default route:
 app.get("/", (req, res) => {
   res.send("Second Shorts API");
+});
+
+// Access Error logs:
+app.get("/error-logs", (req, res) => {
+  console.log(
+    "Error logs accessed",
+    path.join(__dirname, "../logs/error/error.log")
+  );
+  res.sendFile(path.join(__dirname, "../logs/error/error.log"));
 });
 
 // Unhandled Routes:

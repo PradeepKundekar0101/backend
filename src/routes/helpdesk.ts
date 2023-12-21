@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { responseInterceptor } from "../middlewares/logger";
 import {
   createHelpDesk,
   getAllHelpDesk,
@@ -10,8 +9,6 @@ import {
 
 const router = Router();
 
-// Middlewares:
-router.use(responseInterceptor);
 
 router.post("/", createHelpDesk);
 router.get("/", getAllHelpDesk);

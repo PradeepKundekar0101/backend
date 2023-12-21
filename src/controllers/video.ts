@@ -9,14 +9,12 @@ export const createVideos = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { videos } = req.body;
 
-    console.log(req.body);
-
     if (!videos || videos.length == 0) {
       return next(new AppError(400, "Please provide atleast one video"));
     }
     let response = [];
     for (const video of videos) {
-      response.push(await videoService.createVideo(video));
+      response.push(await videoService.createVideos(video));
     }
     sendResponse(res, 201, { response });
   }
@@ -27,30 +25,15 @@ export const createVideo = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { videoId, productId, tags } = req.body;
     if (!videoId || !productId || !tags) {
-      return next(new AppError(400, "Please videoId productId and tags"));
+      return next(new AppError(400, "Please videoId, productId and tags"));
     }
 
     if (tags.length == 0) {
       return next(new AppError(400, "Please provide atleast one tag"));
     }
 
-    const video = await videoService.createVideo(req.body);
+    const video = await videoService.createVideos(req.body);
     sendResponse(res, 201, { video });
-  }
-);
-
-//Delete a Video
-export const deleteVideo = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    const { videoId } = req.params;
-    if (!videoId) {
-      return next(new AppError(400, "Please videoId"));
-    }
-    const video = await videoService.deleteVideo(videoId);
-    if (!video) {
-      return next(new AppError(404, `Video with id ${videoId} not found`));
-    }
-    res.status(204).json({ video });
   }
 );
 
@@ -79,9 +62,10 @@ export const getVideoById = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { videoId } = req.params;
     if (!videoId) {
-      return next(new AppError(400, "Please videoId"));
+      return next(new AppError(400, "Please provide videoId"));
     }
     const video = await videoService.getVideoById(videoId);
+
     if (!video) sendResponse(res, 404, {});
     sendResponse(res, 200, { video });
   }
@@ -113,5 +97,22 @@ export const getVideosSuggestions = catchAsync(
     const videos = await videoService.getVideosSuggestions(productId, tags);
 
     sendResponse(res, 200, { videos });
+  }
+);
+
+//Delete a Video
+export const deleteVideo = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { videoId } = req.params;
+    if (!videoId) {
+      return next(new AppError(400, "Please provide videoId"));
+    }
+
+    const video = await videoService.deleteVideo(videoId);
+
+    if (!video) {
+      return next(new AppError(404, `Video with id ${videoId} not found`));
+    }
+    res.status(204).json({ video });
   }
 );

@@ -5,7 +5,9 @@ export const allCategoryStatsPipeline = () => {
 
   // Get all categories and project only _id and name:
   statsAggPipeline.push(
-    { $match: {} },
+    {
+      $match: {},
+    },
     {
       $project: {
         _id: 1,

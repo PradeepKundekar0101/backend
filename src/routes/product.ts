@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { responseInterceptor } from "../middlewares/logger";
 import {
   createProduct,
   deleteProduct,
@@ -10,8 +9,6 @@ import {
 } from "../controllers/product";
 
 const router = Router();
-
-router.use(responseInterceptor);
 
 //Product routes
 router.post("/", createProduct);

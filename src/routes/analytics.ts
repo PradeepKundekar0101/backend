@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { responseInterceptor } from "../middlewares/logger";
 import {
   createAnalytics,
   getAllCategoryStats,
@@ -10,9 +9,6 @@ import {
 } from "../controllers/analytics";
 
 const router = Router();
-
-// Middlewares:
-router.use(responseInterceptor);
 
 // Routes:
 router.post("/", createAnalytics);

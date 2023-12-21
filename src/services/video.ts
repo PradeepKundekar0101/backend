@@ -1,11 +1,15 @@
-import mongoose, { PipelineStage } from "mongoose";
 import Video, { IVideo } from "../models/video";
+import Product from "../models/product";
 import Analytics from "../models/analytics";
 import { videoRankingPipeline } from "./pipelines/video/videoSuggestion";
 
 class VideoService {
-  async createVideo(videoData: IVideo): Promise<IVideo> {
+  async createVideos(videoData: IVideo): Promise<IVideo> {
     const video = await Video.create(videoData);
+
+    // Find the product and update the is_active status:
+    await Product.findByIdAndUpdate(videoData.productId, { is_active: true });
+
     return video;
   }
 
@@ -25,12 +29,16 @@ class VideoService {
   }
 
   async deleteVideo(videoId: string): Promise<IVideo | null> {
-    const video = await Video.findByIdAndDelete(videoId);
+    const video = await Video.findByIdAndUpdate(
+      videoId,
+      { is_discontinued: true },
+      { new: true }
+    );
+
     return video;
   }
 
   async getVideosSuggestions(productId: string, tags: string[]): Promise<any> {
-    // Merge the rankedVideos array with the videos array:
     const aggPipeline = videoRankingPipeline(productId, tags);
     const rankedVideos = await Analytics.aggregate(aggPipeline.rankAggPipeline);
 

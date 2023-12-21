@@ -1,5 +1,5 @@
-import AppError from "../utils/AppError";
 import Category, { ICategory } from "../models/category";
+import productServices from "./product";
 
 class CategoryService {
   async createCategory(categoryData: ICategory): Promise<ICategory> {
@@ -17,7 +17,10 @@ class CategoryService {
     return category;
   }
 
-  async updateCategory( categoryId: string, categoryData: ICategory ): Promise<ICategory | null> {
+  async updateCategory(
+    categoryId: string,
+    categoryData: ICategory
+  ): Promise<ICategory | null> {
     const category = await Category.findByIdAndUpdate(
       categoryId,
       categoryData,
@@ -26,11 +29,26 @@ class CategoryService {
     return category;
   }
 
-  async deleteCategory(categoryId: string): Promise<void> {
-    const category = await Category.findByIdAndDelete(categoryId);
+  async deleteCategory(categoryId: string): Promise<ICategory | null> {
+    // // Delete all the products related to category
+    // const productsToBeDeleted = await productServices.getAllProducts({
+    //   category: categoryId,
+    // });
 
-    if (!category)
-      throw new AppError(404, `Category with id ${categoryId} not found`);
+    // // Delete all the tags and videos related to product:
+    // for (const product of productsToBeDeleted) {
+    //   await productServices.deleteProduct(product._id);
+    // }
+
+    const category = await Category.findByIdAndUpdate(
+      categoryId,
+      {
+        is_discontinued: true,
+      },
+      { new: true }
+    );
+
+    return category;
   }
 }
 
