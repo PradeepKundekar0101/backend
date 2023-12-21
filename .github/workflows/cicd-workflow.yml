@@ -22,7 +22,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
-        run: sudo docker pull sudeepk11/backend-v1x:latest
+        run: docker pull sudeepk11/backend-v1x:latest
       - name: Delete old container
         run: docker rm -f backend-v1x-container
       - name: Run docker container
