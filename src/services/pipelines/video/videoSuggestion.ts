@@ -21,20 +21,8 @@ export const videoRankingPipeline = (productId: string, tags: string[]) => {
       },
     }
   );
-<<<<<<< HEAD
-  // IDEA: For each video populate the tags array with the tag names:
-=======
 
-  // Populate the tags array:
-  // videoAggPipeline.push({
-  //   $lookup: {
-  //     from: "tags",
-  //     localField: "tags",
-  //     foreignField: "_id",
-  //     as: "tags",
-  //   },
-  // });
->>>>>>> 1ced6cc0e47acacabd288b1478e5ef30a9e4d43b
+  // IDEA: For each video populate the tags array with the tag names:
 
   // Get Ranked Videos:
   // Match videos with the product id and atleast one tag:
