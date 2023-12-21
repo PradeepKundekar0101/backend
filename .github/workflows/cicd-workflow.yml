@@ -19,7 +19,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [ip-172-31-37-168]
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
         run: sudo docker pull sudeepk11/backend-v1x:latest
