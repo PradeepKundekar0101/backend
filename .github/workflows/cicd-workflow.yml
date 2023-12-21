@@ -13,17 +13,17 @@ jobs:
       - name: Login to docker hub 
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker image
-        run: docker build -t secondshorts/backend-v1x .
+        run: docker build -t SecondShorts/backend-v1x .
       - name: Publish image to docker hub
-        run: docker push secondshorts/backend-v1x:latest
+        run: docker push SecondShorts/backend-v1x:latest
 
   deploy:
     needs: build
     runs-on: [backend-runner]
     steps:
       - name: Pull image from docker hub
-        run: docker pull secondshorts/backend-v1x:latest
+        run: docker pull SecondShorts/backend-v1x:latest
       - name: Delete old container
-        run: docker rm -f nodejs-app-container
+        run: docker rm -f backend-app-container
       - name: Run docker container
-        run: docker run -d -p 5000:5000 --name nodejs-app-container secondshorts/backend-v1x
+        run: docker run -d -p 5000:5000 --name backend-app-container SecondShorts/backend-v1x
