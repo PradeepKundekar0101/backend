@@ -1,0 +1,270 @@
+[{
+  "_id": {
+    "$oid": "657847499e5e0d8a3818a356"
+  },
+  "videoId": "ytvideo1",
+  "productId": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tags": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:43:05.287Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:43:05.287Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657847499e5e0d8a3818a358"
+  },
+  "videoId": "ytvideo2",
+  "productId": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tags": [
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:43:05.291Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:43:05.291Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6578478a9e5e0d8a3818a35a"
+  },
+  "videoId": "ytvideo3",
+  "productId": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tags": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:44:10.730Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:44:10.730Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6578478a9e5e0d8a3818a35c"
+  },
+  "videoId": "ytvideo4",
+  "productId": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tags": [
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:44:10.734Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:44:10.734Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657847ce9e5e0d8a3818a360"
+  },
+  "videoId": "ytvideo5",
+  "productId": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tags": [
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:45:18.607Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:45:18.607Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657847ce9e5e0d8a3818a362"
+  },
+  "videoId": "ytvideo6",
+  "productId": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tags": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:45:18.611Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:45:18.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657848029e5e0d8a3818a364"
+  },
+  "videoId": "ytvideo9",
+  "productId": {
+    "$oid": "657841388074793581c7b6ea"
+  },
+  "tags": [
+    {
+      "$oid": "657844fe165caa7d4c17e519"
+    },
+    {
+      "$oid": "657844fe165caa7d4c17e51c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:46:10.184Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:46:10.184Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657848029e5e0d8a3818a366"
+  },
+  "videoId": "ytvideo8",
+  "productId": {
+    "$oid": "657841388074793581c7b6ea"
+  },
+  "tags": [
+    {
+      "$oid": "657844fe165caa7d4c17e51f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:46:10.186Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:46:10.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6578484c9e5e0d8a3818a368"
+  },
+  "videoId": "ytvideo11",
+  "productId": {
+    "$oid": "6578415d8074793581c7b6ec"
+  },
+  "tags": [
+    {
+      "$oid": "65784520165caa7d4c17e52a"
+    },
+    {
+      "$oid": "65784520165caa7d4c17e527"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:47:24.196Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:47:24.196Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6578484c9e5e0d8a3818a36a"
+  },
+  "videoId": "ytvideo10",
+  "productId": {
+    "$oid": "6578415d8074793581c7b6ec"
+  },
+  "tags": [
+    {
+      "$oid": "65784520165caa7d4c17e524"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:47:24.199Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:47:24.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657848749e5e0d8a3818a36e"
+  },
+  "videoId": "ytvideo13",
+  "productId": {
+    "$oid": "657841618074793581c7b6ee"
+  },
+  "tags": [
+    {
+      "$oid": "6578453d165caa7d4c17e532"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:48:04.144Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:48:04.144Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657848749e5e0d8a3818a370"
+  },
+  "videoId": "ytvideo12",
+  "productId": {
+    "$oid": "657841618074793581c7b6ee"
+  },
+  "tags": [
+    {
+      "$oid": "6578453d165caa7d4c17e52f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-12T11:48:04.150Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-12T11:48:04.150Z"
+  },
+  "__v": 0
+}]

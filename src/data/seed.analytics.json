@@ -1,0 +1,1473 @@
+[{
+  "_id": {
+    "$oid": "657a7ba2f7685ec08126daf9"
+  },
+  "sessionId": "192.168.1.0",
+  "timeOnSite": 180,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a356"
+      },
+      "duration": 180,
+      "watchTime": 120,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.67,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7ba2f7685ec08126dafa"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a358"
+      },
+      "duration": 150,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.8,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7ba2f7685ec08126dafb"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T03:50:58.348Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:50:58.348Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7c04f7685ec08126dafd"
+  },
+  "sessionId": "192.168.1.1",
+  "timeOnSite": 200,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a356"
+      },
+      "duration": 180,
+      "watchTime": 100,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.53,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7c04f7685ec08126dafe"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T03:52:36.630Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:52:36.630Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7c31f7685ec08126db00"
+  },
+  "sessionId": "192.168.1.2",
+  "timeOnSite": 200,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a356"
+      },
+      "duration": 180,
+      "watchTime": 90,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7c31f7685ec08126db01"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T03:53:21.356Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:53:21.356Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7c58f7685ec08126db03"
+  },
+  "sessionId": "192.168.1.3",
+  "timeOnSite": 200,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a356"
+      },
+      "duration": 180,
+      "watchTime": 200,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.8,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7c58f7685ec08126db04"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T03:54:00.205Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:54:00.205Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7c6df7685ec08126db06"
+  },
+  "sessionId": "192.168.1.4",
+  "timeOnSite": 200,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a358"
+      },
+      "duration": 150,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.8,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7c6df7685ec08126db07"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T03:54:21.677Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:54:21.677Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7cd0f7685ec08126db09"
+  },
+  "sessionId": "192.168.1.5",
+  "timeOnSite": 250,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a358"
+      },
+      "duration": 150,
+      "watchTime": 180,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.85,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7cd0f7685ec08126db0a"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket131",
+    "name": "Alex Turner",
+    "email": "alex@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a7cd0f7685ec08126db0b"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T03:56:00.687Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:56:00.687Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7d08f7685ec08126db0d"
+  },
+  "sessionId": "192.168.1.6",
+  "timeOnSite": 550,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840d28074793581c7b6e2"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "65784488165caa7d4c17e4f4"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4f7"
+    },
+    {
+      "$oid": "65784488165caa7d4c17e4fa"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a356"
+      },
+      "duration": 180,
+      "watchTime": 200,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.8,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7d08f7685ec08126db0e"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847499e5e0d8a3818a358"
+      },
+      "duration": 150,
+      "watchTime": 180,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.85,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7d08f7685ec08126db0f"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket131",
+    "name": "Alex Turner",
+    "email": "alex@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a7d08f7685ec08126db10"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T03:56:56.078Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T03:56:56.078Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7dc5f7685ec08126db12"
+  },
+  "sessionId": "192.168.1.7",
+  "timeOnSite": 550,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 200,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.6,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7dc5f7685ec08126db13"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 180,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.7,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7dc5f7685ec08126db14"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:00:05.848Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:00:05.848Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7df6f7685ec08126db16"
+  },
+  "sessionId": "192.168.1.8",
+  "timeOnSite": 550,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 100,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7df6f7685ec08126db17"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 130,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.2,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7df6f7685ec08126db18"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:00:54.824Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:00:54.824Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7e0df7685ec08126db1a"
+  },
+  "sessionId": "192.168.1.9",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 100,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7e0df7685ec08126db1b"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 130,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.2,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7e0df7685ec08126db1c"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket171",
+    "name": "Alex Costa",
+    "email": "alex@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a7e0df7685ec08126db1d"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T04:01:17.672Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:01:17.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7e27f7685ec08126db1f"
+  },
+  "sessionId": "192.168.1.9",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 100,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7e27f7685ec08126db20"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 130,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.2,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7e27f7685ec08126db21"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:01:43.288Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:01:43.288Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7e60f7685ec08126db23"
+  },
+  "sessionId": "192.168.1.9",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 110,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7e60f7685ec08126db24"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:02:40.122Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:02:40.122Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7e73f7685ec08126db26"
+  },
+  "sessionId": "192.168.1.9",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 110,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.4,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7e73f7685ec08126db27"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket174",
+    "name": "David Costa",
+    "email": "alex@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a7e73f7685ec08126db28"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T04:02:59.993Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:02:59.993Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7ea0f7685ec08126db2a"
+  },
+  "sessionId": "192.168.1.9",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e4ff"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35a"
+      },
+      "duration": 140,
+      "watchTime": 110,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.75,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7ea0f7685ec08126db2b"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.7,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7ea0f7685ec08126db2c"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:03:44.995Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:03:44.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7ec4f7685ec08126db2e"
+  },
+  "sessionId": "192.168.1.13",
+  "timeOnSite": 500,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.7,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7ec4f7685ec08126db2f"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:04:20.103Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:04:20.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7ee9f7685ec08126db31"
+  },
+  "sessionId": "192.168.1.14",
+  "timeOnSite": 340,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.7,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a7ee9f7685ec08126db32"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket179",
+    "name": "John Mike",
+    "email": "alex@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a7ee9f7685ec08126db33"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T04:04:57.768Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:04:57.768Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a7f16f7685ec08126db35"
+  },
+  "sessionId": "192.168.1.15",
+  "timeOnSite": 390,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840688074793581c7b6dc"
+  },
+  "productSelected": {
+    "$oid": "657840dc8074793581c7b6e4"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844ac165caa7d4c17e502"
+    },
+    {
+      "$oid": "657844ac165caa7d4c17e505"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "6578478a9e5e0d8a3818a35c"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.82,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a7f16f7685ec08126db36"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T04:05:42.877Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T04:05:42.877Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a94d72d3a3f630d35e0c0"
+  },
+  "sessionId": "192.168.1.16",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 110,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.75,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a94d72d3a3f630d35e0c1"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.82,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a94d72d3a3f630d35e0c2"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:38:31.903Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:38:31.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a950a2d3a3f630d35e0c4"
+  },
+  "sessionId": "192.168.1.17",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 130,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.57,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a950a2d3a3f630d35e0c5"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 170,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.89,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a950a2d3a3f630d35e0c6"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:39:22.223Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:39:22.223Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a95352d3a3f630d35e0c8"
+  },
+  "sessionId": "192.168.1.18",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 130,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.57,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a95352d3a3f630d35e0c9"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 170,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.89,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a95352d3a3f630d35e0ca"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket169",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a95352d3a3f630d35e0cb"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T05:40:05.143Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:40:05.143Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a955a2d3a3f630d35e0cd"
+  },
+  "sessionId": "192.168.1.17",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 140,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.57,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a955a2d3a3f630d35e0ce"
+      }
+    },
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 190,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.79,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a955a2d3a3f630d35e0cf"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:40:42.199Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:40:42.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a957d2d3a3f630d35e0d1"
+  },
+  "sessionId": "192.168.1.20",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e50d"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.69,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a957d2d3a3f630d35e0d2"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:41:17.798Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:41:17.798Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a95972d3a3f630d35e0d4"
+  },
+  "sessionId": "192.168.1.21",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e50a"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a362"
+      },
+      "duration": 250,
+      "watchTime": 120,
+      "pausedAt": [
+        20,
+        40
+      ],
+      "completionRatio": 0.69,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a95972d3a3f630d35e0d5"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket169",
+    "name": "Patrick Doe",
+    "email": "pat@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a95972d3a3f630d35e0d6"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T05:41:43.439Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:41:43.439Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a95ce2d3a3f630d35e0d8"
+  },
+  "sessionId": "192.168.1.17",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    },
+    {
+      "$oid": "657844d5165caa7d4c17e513"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 180,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.97,
+      "wasHelpful": false,
+      "_id": {
+        "$oid": "657a95ce2d3a3f630d35e0d9"
+      }
+    }
+  ],
+  "customerSupportMetadata": {
+    "ticketId": "ticket169",
+    "name": "Jonas Sch",
+    "email": "jonas@example.com",
+    "description": "Looking for product recommendations.",
+    "_id": {
+      "$oid": "657a95ce2d3a3f630d35e0da"
+    }
+  },
+  "createdAt": {
+    "$date": "2023-12-14T05:42:38.147Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:42:38.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a95e72d3a3f630d35e0dc"
+  },
+  "sessionId": "192.168.1.22",
+  "timeOnSite": 790,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 180,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.97,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a95e72d3a3f630d35e0dd"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:43:03.058Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:43:03.058Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a95f12d3a3f630d35e0df"
+  },
+  "sessionId": "192.168.1.19",
+  "timeOnSite": 690,
+  "location": "Brazil",
+  "categorySelected": {
+    "$oid": "657840708074793581c7b6de"
+  },
+  "productSelected": {
+    "$oid": "657841348074793581c7b6e8"
+  },
+  "tagsSelected": [
+    {
+      "$oid": "657844d5165caa7d4c17e510"
+    }
+  ],
+  "videosWatched": [
+    {
+      "videoId": {
+        "$oid": "657847ce9e5e0d8a3818a360"
+      },
+      "duration": 140,
+      "watchTime": 180,
+      "pausedAt": [
+        30,
+        60
+      ],
+      "completionRatio": 0.97,
+      "wasHelpful": true,
+      "_id": {
+        "$oid": "657a95f12d3a3f630d35e0e0"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-12-14T05:43:13.914Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-14T05:43:13.914Z"
+  },
+  "__v": 0
+}]
