@@ -33,12 +33,14 @@ class ProductService {
     productId: string,
     productData: IProduct
   ): Promise<IProduct | null> {
-    const updatedProduct = await Product.findByIdAndUpdate(
-      productId,
-      productData,
-      { new: true }
-    );
-    return updatedProduct;
+    const result = await Product.findByIdAndUpdate(productId, productData, {
+      new: true,
+    });
+    if (!result) return null;
+    const product: IProduct = {
+      ...result.toObject(),
+    };
+    return product;
   }
 
   //Function to add Tags to a product

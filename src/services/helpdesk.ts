@@ -7,7 +7,7 @@ class HelpDeskService {
   }
 
   async getAllHelpDesk(): Promise<IHelpDesk[]> {
-    const helpdesks= await HelpDesk.find();
+    const helpdesks = await HelpDesk.find();
     return helpdesks;
   }
 
@@ -16,12 +16,15 @@ class HelpDeskService {
     return helpdesk;
   }
 
-  async updateHelpDesk( helpdeskId: string, helpdeskData: IHelpDesk ): Promise<IHelpDesk | null> {
-    const helpdesk = await HelpDesk.findByIdAndUpdate(
-      helpdeskId,
-      helpdeskData,
-      { new: true }
-    );
+  async updateHelpDesk(
+    helpdeskId: string,
+    helpdeskData: IHelpDesk
+  ): Promise<IHelpDesk | null> {
+    const result = await HelpDesk.findByIdAndUpdate(helpdeskId, helpdeskData, {
+      new: true,
+    });
+    if (!result) return null;
+    const helpdesk: IHelpDesk = { ...result.toObject() };
     return helpdesk;
   }
 
