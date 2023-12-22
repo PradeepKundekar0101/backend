@@ -6,7 +6,7 @@ import { videoRankingPipeline } from "./pipelines/video/videoSuggestion";
 class VideoService {
   async createVideo(videoData: IVideo): Promise<IVideo> {
     const video = await Video.create(videoData);
-    return video
+    return video;
   }
 
   async getVideosByProductId(productId: string): Promise<IVideo[]> {
@@ -25,12 +25,9 @@ class VideoService {
   }
 
   async deleteVideo(videoId: string): Promise<IVideo | null> {
-    const result = await Video.findByIdAndDelete(videoId);
-    if (!result) return null;
-    const video: IVideo = {...result.toObject(), _id: result._id.toString()};
+    const video = await Video.findByIdAndDelete(videoId);
     return video;
   }
-  
 
   async getVideosSuggestions(productId: string, tags: string[]): Promise<any> {
     // Merge the rankedVideos array with the videos array:
