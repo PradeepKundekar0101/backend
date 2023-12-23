@@ -15,6 +15,7 @@ class VideoService {
       is_active: true,
     }).exec();
 
+
     return video;
   }
 
@@ -39,6 +40,7 @@ class VideoService {
       { is_discontinued: true },
       { new: true }
     ).exec();
+
 
     return video;
   }

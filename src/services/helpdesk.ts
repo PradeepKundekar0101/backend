@@ -4,8 +4,6 @@ import { Document } from "mongoose";
 
 type IUpdatedHelpDesk = Document<unknown, {}, IHelpDesk>;
 
-type IUpdatedHelpDesk = Document<unknown, {}, IHelpDesk>;
-
 class HelpDeskService {
   async createHelpDesk(helpdeskData: IHelpDesk): Promise<IHelpDesk> {
     const helpdesk = await HelpDesk.create(helpdeskData);
