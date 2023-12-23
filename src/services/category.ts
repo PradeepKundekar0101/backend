@@ -51,7 +51,6 @@ class CategoryService {
       { new: true }
     ).exec();
 
-
     return category;
   }
 }
