@@ -1,5 +1,7 @@
+import { Document } from "mongoose";
 import Category, { ICategory } from "../models/category";
-import productServices from "./product";
+
+type IUpdatedCategory = Document<unknown, {}, ICategory>;
 
 class CategoryService {
   async createCategory(categoryData: ICategory): Promise<ICategory> {
@@ -20,7 +22,7 @@ class CategoryService {
   async updateCategory(
     categoryId: string,
     categoryData: ICategory
-  ): Promise<ICategory | null> {
+  ): Promise<IUpdatedCategory | null> {
     const category = await Category.findByIdAndUpdate(
       categoryId,
       categoryData,
@@ -29,7 +31,7 @@ class CategoryService {
     return category;
   }
 
-  async deleteCategory(categoryId: string): Promise<ICategory | null> {
+  async deleteCategory(categoryId: string): Promise<IUpdatedCategory | null> {
     // // Delete all the products related to category
     // const productsToBeDeleted = await productServices.getAllProducts({
     //   category: categoryId,

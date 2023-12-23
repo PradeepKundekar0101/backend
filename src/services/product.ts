@@ -1,7 +1,9 @@
-import { ObjectId } from "mongoose";
+import { Document, ObjectId } from "mongoose";
 import Product, { IProduct } from "../models/product";
 import Tag from "../models/tag";
 import AppError from "../utils/AppError";
+
+type IUpdatedProduct = Document<unknown, {}, IProduct>;
 
 class ProductService {
   //Function to create Product
@@ -31,7 +33,7 @@ class ProductService {
   async updateProduct(
     productId: string,
     productData: IProduct
-  ): Promise<IProduct | null> {
+  ): Promise<IUpdatedProduct | null> {
     const updatedProduct = await Product.findByIdAndUpdate(
       productId,
       productData,
@@ -44,7 +46,7 @@ class ProductService {
   async updateProductWithTags(
     productId: string,
     tags: string[]
-  ): Promise<IProduct | null> {
+  ): Promise<IUpdatedProduct | null> {
     const product = await Product.findById(productId);
     if (!product) {
       throw new AppError(400, "Product not found");
@@ -62,7 +64,7 @@ class ProductService {
   }
 
   // Function to delete a Product
-  async deleteProduct(productId: string): Promise<IProduct | null> {
+  async deleteProduct(productId: string): Promise<IUpdatedProduct | null> {
     //Delete all the tags related to product
     // for (const tag of product.tags) {
     //   await Tag.findByIdAndDelete(tag);

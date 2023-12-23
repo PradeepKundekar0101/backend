@@ -1,7 +1,10 @@
+import { Document } from "mongoose";
 import Video, { IVideo } from "../models/video";
 import Product from "../models/product";
 import Analytics from "../models/analytics";
 import { videoRankingPipeline } from "./pipelines/video/videoSuggestion";
+
+type IUpdatedVideo = Document<unknown, {}, IVideo>;
 
 class VideoService {
   async createVideos(videoData: IVideo): Promise<IVideo> {
@@ -28,7 +31,7 @@ class VideoService {
     return videos;
   }
 
-  async deleteVideo(videoId: string): Promise<IVideo | null> {
+  async deleteVideo(videoId: string): Promise<IUpdatedVideo | null> {
     const video = await Video.findByIdAndUpdate(
       videoId,
       { is_discontinued: true },
