@@ -27,7 +27,8 @@ class CategoryService {
       categoryId,
       categoryData,
       { new: true }
-    );
+    ).exec();
+
     return category;
   }
 
@@ -48,7 +49,8 @@ class CategoryService {
         is_discontinued: true,
       },
       { new: true }
-    );
+    ).exec();
+
 
     return category;
   }

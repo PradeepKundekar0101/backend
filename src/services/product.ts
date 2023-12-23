@@ -38,7 +38,7 @@ class ProductService {
       productId,
       productData,
       { new: true }
-    );
+    ).exec();
     return updatedProduct;
   }
 
@@ -83,7 +83,7 @@ class ProductService {
       productId,
       { is_discontinued: true },
       { new: true }
-    );
+    ).exec();
 
     return product;
   }
