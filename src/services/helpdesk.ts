@@ -31,7 +31,7 @@ class HelpDeskService {
     return helpdesk;
   }
 
-  async deleteHelpDesk(helpdeskId: string): Promise<IHelpDesk | null> {
+  async deleteHelpDesk(helpdeskId: string): Promise<IUpdatedHelpDesk | null> {
     const helpdesk = await HelpDesk.findByIdAndDelete(helpdeskId);
     return helpdesk;
   }
