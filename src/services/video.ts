@@ -11,7 +11,9 @@ class VideoService {
     const video = await Video.create(videoData);
 
     // Find the product and update the is_active status:
-    await Product.findByIdAndUpdate(videoData.productId, { is_active: true });
+    await Product.findByIdAndUpdate(videoData.productId, {
+      is_active: true,
+    }).exec();
 
     return video;
   }
@@ -36,7 +38,7 @@ class VideoService {
       videoId,
       { is_discontinued: true },
       { new: true }
-    );
+    ).exec();
 
     return video;
   }
