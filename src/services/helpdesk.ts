@@ -33,7 +33,11 @@ class HelpDeskService {
   }
 
   async deleteHelpDesk(helpdeskId: string): Promise<IUpdatedHelpDesk | null> {
-    const helpdesk = await HelpDesk.findByIdAndDelete(helpdeskId);
+    const helpdesk = await HelpDesk.findByIdAndUpdate(
+      helpdeskId,
+      { is_discontinued: true },
+      { new: true }
+    ).exec();
     return helpdesk;
   }
 }
