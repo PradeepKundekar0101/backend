@@ -1,6 +1,5 @@
 import { Document } from "mongoose";
 import HelpDesk, { IHelpDesk } from "../models/helpdesk";
-import { Document } from "mongoose";
 
 type IUpdatedHelpDesk = Document<unknown, {}, IHelpDesk>;
 
