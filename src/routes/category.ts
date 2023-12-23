@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { responseInterceptor } from "../middlewares/logger";
 import {
   createCategory,
   getAllCategories,
@@ -9,9 +8,6 @@ import {
 } from "../controllers/category";
 
 const router = Router();
-
-// Middlewares:
-router.use(responseInterceptor);
 
 // Category routes:
 router.post("/", createCategory);

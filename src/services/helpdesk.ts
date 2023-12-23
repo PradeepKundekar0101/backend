@@ -1,4 +1,7 @@
 import HelpDesk, { IHelpDesk } from "../models/helpdesk";
+import { Document } from "mongoose";
+
+type IUpdatedHelpDesk = Document<unknown, {}, IHelpDesk>;
 
 class HelpDeskService {
   async createHelpDesk(helpdeskData: IHelpDesk): Promise<IHelpDesk> {
@@ -7,7 +10,7 @@ class HelpDeskService {
   }
 
   async getAllHelpDesk(): Promise<IHelpDesk[]> {
-    const helpdesks= await HelpDesk.find();
+    const helpdesks = await HelpDesk.find();
     return helpdesks;
   }
 
@@ -16,7 +19,10 @@ class HelpDeskService {
     return helpdesk;
   }
 
-  async updateHelpDesk( helpdeskId: string, helpdeskData: IHelpDesk ): Promise<IHelpDesk | null> {
+  async updateHelpDesk(
+    helpdeskId: string,
+    helpdeskData: IHelpDesk
+  ): Promise<IUpdatedHelpDesk | null> {
     const helpdesk = await HelpDesk.findByIdAndUpdate(
       helpdeskId,
       helpdeskData,

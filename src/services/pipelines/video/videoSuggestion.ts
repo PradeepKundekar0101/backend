@@ -13,6 +13,7 @@ export const videoRankingPipeline = (productId: string, tags: string[]) => {
       $match: {
         productId: queryProduct,
         tags: { $in: queryTags },
+        is_active: true,
       },
     },
     {
@@ -21,7 +22,6 @@ export const videoRankingPipeline = (productId: string, tags: string[]) => {
       },
     }
   );
-
   // IDEA: For each video populate the tags array with the tag names:
 
   // Get Ranked Videos:

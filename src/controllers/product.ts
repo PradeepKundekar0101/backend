@@ -27,7 +27,9 @@ export const getProductById = catchAsync(
     if (!productId) {
       return next(new AppError(400, "Please provide Product Id"));
     }
+
     const product = await ProductService.getProduct(productId);
+
     if (!product) {
       return next(new AppError(404, `Product with id ${productId} not found`));
     }
@@ -44,6 +46,7 @@ export const updateProductWithTags = catchAsync(
     if (!tags || tags.length == 0) {
       return next(new AppError(400, "Please provide tags for the product"));
     }
+
     const updatedProduct = await ProductService.updateProductWithTags(
       productId,
       tags
@@ -60,6 +63,7 @@ export const updateProduct = catchAsync(
     if (!productId) {
       return next(new AppError(400, "Please provide productId"));
     }
+
     const product = await ProductService.updateProduct(productId, req.body);
 
     if (!product) {
@@ -76,7 +80,9 @@ export const deleteProduct = catchAsync(
     if (!productId) {
       return next(new AppError(400, "Please provide productId"));
     }
+
     const deletedProduct = await ProductService.deleteProduct(productId);
+
     if (!deletedProduct) {
       return next(new AppError(404, `Product with id ${productId} not found`));
     }

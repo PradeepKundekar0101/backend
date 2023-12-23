@@ -5,6 +5,7 @@ export interface IVideo {
   videoId: string;
   productId: ObjectId;
   tags: ObjectId[];
+  is_discontinued: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -27,6 +28,10 @@ const VideoSchema = new Schema<IVideo>(
         ref: "Tag",
       },
     ],
+    is_discontinued: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -41,6 +46,9 @@ VideoSchema.pre(/^find/, function (next) {
     path: "tags",
     select: "-__v",
   });
+
+  // @ts-ignore
+  this.find({ is_discontinued: false });
   next();
 });
 

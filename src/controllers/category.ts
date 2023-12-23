@@ -71,8 +71,13 @@ export const deleteCategory = catchAsync(
       return next(new AppError(400, "Please provide categoryId"));
     }
 
-    await categoryService.deleteCategory(categoryId);
+    const deletedCategory = await categoryService.deleteCategory(categoryId);
 
+    if (!deletedCategory) {
+      return next(
+        new AppError(404, `Category with id ${categoryId} not found`)
+      );
+    }
     res.status(204).json();
   }
 );

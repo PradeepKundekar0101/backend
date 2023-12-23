@@ -1,5 +1,5 @@
-import mongoose, { Schema, model, ObjectId } from "mongoose";
-export interface IProduct {
+import mongoose, { Schema, model, ObjectId, Document } from "mongoose";
+export interface IProduct extends Document {
   name: string;
   image_url: string;
   category: ObjectId;
@@ -52,6 +52,11 @@ ProductSchema.pre(/^find/, function (next) {
   this.populate({
     path: "tags",
     select: "-__v",
+  });
+
+  // @ts-ignore
+  this.find({
+    $and: [{ is_active: true }, { is_discontinued: false }],
   });
   next();
 });
