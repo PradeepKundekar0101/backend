@@ -10,21 +10,20 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
-      - name: Login to docker hub 
+      - name: Login to Docker Hub 
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build docker image
+      - name: Build Docker image
         run: docker build -t sudeepk11/backend-v1x .
-      - name: Publish image to docker hub 
+      - name: Publish image to Docker Hub 
         run: docker push sudeepk11/backend-v1x:latest
 
   deploy:
     needs: build
     runs-on: self-hosted 
     steps:
-      - name: Pull image from docker hub
+      - name: Pull image from Docker Hub
         run: sudo docker pull sudeepk11/backend-v1x:latest
       - name: Delete old container
         run: sudo docker rm -f backend-v1x-container
-      - name: Run docker container
-        run: sudo docker run -d -p 5000:5000 --name backend-v1x-container sudeepk11/backend-v1x
-
+      - name: Run Docker container
+        run: sudo docker run -d -p 5000:5000 -e MONGO_URI=${{ secrets.MONGO_URI }} -e NODE_ENV=production --name backend-v1x-container sudeepk11/backend-v1x
