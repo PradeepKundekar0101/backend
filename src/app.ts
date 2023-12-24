@@ -16,7 +16,7 @@ import { errorInterceptor, responseInterceptor } from "./middlewares/logger";
 import path from "path";
 
 dotenv.config();
-
+console.log(process.env.MONGO_URI)
 // Connect to MongoDB:
 mongoConnect(process.env.MONGO_URI!);
 
