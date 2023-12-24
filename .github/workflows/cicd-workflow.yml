@@ -26,6 +26,6 @@ jobs:
       - name: Delete old container
         run: sudo docker rm -f backend-v1x-container
       - name: Echo MONGO_URI for testing 
-        run: echo ${{ secrets.MONGO_URI }}
+        run: echo ${{ secrets }}
       - name: Run Docker container
         run: sudo docker run -d -p 5000:5000 -e MONGO_URI=${{ secrets.MONGO_URI }} -e NODE_ENV=production --name backend-v1x-container sudeepk11/backend-v1x
