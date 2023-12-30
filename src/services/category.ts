@@ -1,5 +1,7 @@
 import { Document } from "mongoose";
+import productServices from "./product";
 import Category, { ICategory } from "../models/category";
+import AppError from "../utils/AppError";
 
 type IUpdatedCategory = Document<unknown, {}, ICategory>;
 
@@ -33,23 +35,29 @@ class CategoryService {
   }
 
   async deleteCategory(categoryId: string): Promise<IUpdatedCategory | null> {
-    // // Delete all the products related to category
-    // const productsToBeDeleted = await productServices.getAllProducts({
-    //   category: categoryId,
-    // });
+    const category = await Category.findById(categoryId);
+    if (!category) {
+      throw new AppError(400, "Category not found");
+    }
 
-    // // Delete all the tags and videos related to product:
-    // for (const product of productsToBeDeleted) {
-    //   await productServices.deleteProduct(product._id);
-    // }
+    //Delete all the products related to category
+    const productsToBeDeleted = await productServices.getAllProducts({
+      category: categoryId,
+    });
 
-    const category = await Category.findByIdAndUpdate(
-      categoryId,
-      {
-        is_discontinued: true,
-      },
-      { new: true }
-    ).exec();
+    // // Delete all the products and videos associated to it:
+    for (const product of productsToBeDeleted) {
+      await productServices.deleteProduct(product._id);
+    }
+
+    await category
+      .updateOne(
+        {
+          is_discontinued: true,
+        },
+        { new: true }
+      )
+      .exec();
 
     return category;
   }

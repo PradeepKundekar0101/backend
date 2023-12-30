@@ -56,8 +56,11 @@ ProductSchema.pre(/^find/, function (next) {
 
   // @ts-ignore
   this.find({
-    $and: [{ is_active: true }, { is_discontinued: false }],
+    $and: [{ is_discontinued: false }],
   });
+
+  // @ts-ignore
+  this.select("-__v -is_active -is_discontinued -createdAt -updatedAt");
   next();
 });
 
