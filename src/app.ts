@@ -16,7 +16,6 @@ import { errorInterceptor, responseInterceptor } from "./middlewares/logger";
 import path from "path";
 
 dotenv.config();
-
 // Connect to MongoDB:
 mongoConnect(process.env.MONGO_URI!);
 
@@ -77,7 +76,7 @@ process.on("uncaughtException", (err: any) => {
 });
 
 // Port:
-const PORT = process.env.PORT || 3000;
+const PORT =  5000;
 
 // Listen:
 const server = app.listen(PORT, () =>
