@@ -1,6 +1,7 @@
 import { Document, ObjectId } from "mongoose";
 import Product, { IProduct } from "../models/product";
 import Tag from "../models/tag";
+import videoServices from "./video";
 import AppError from "../utils/AppError";
 
 type IUpdatedProduct = Document<unknown, {}, IProduct>;
@@ -14,7 +15,7 @@ class ProductService {
 
   //Function to get all products
   async getAllProducts(queryParams?: any): Promise<IProduct[]> {
-    let productQuery = Product.find();
+    let productQuery = Product.find({ is_active: true });
     if (queryParams && queryParams.category)
       productQuery = productQuery
         .where("category")
@@ -25,7 +26,7 @@ class ProductService {
 
   //Function to get product By Id
   async getProduct(productId: string): Promise<IProduct | null> {
-    const product = await Product.findById(productId);
+    const product = await Product.findOne({ _id: productId, is_active: true });
     return product;
   }
 
@@ -58,6 +59,8 @@ class ProductService {
       }
       product.tags.push(existingTag._id as unknown as ObjectId);
     }
+
+    product.is_active = true;
     await product.save();
 
     return product;
@@ -65,25 +68,23 @@ class ProductService {
 
   // Function to delete a Product
   async deleteProduct(productId: string): Promise<IUpdatedProduct | null> {
-    //Delete all the tags related to product
-    // for (const tag of product.tags) {
-    //   await Tag.findByIdAndDelete(tag);
-    // }
+    const product = await Product.findById(productId);
 
-    // const videosOfProductToBeDeleted = await videoServices.getVideosByProductId(
-    //   productId
-    // );
+    if (!product) {
+      throw new AppError(400, "Product not found");
+    }
 
-    // for (const video of videosOfProductToBeDeleted) {
-    //   await videoServices.deleteVideo(video._id);
-    // }
+    // Delete all the videos related to product:
+    const videosOfProductToBeDeleted = await videoServices.getVideosByProductId(
+      productId
+    );
+
+    for (const video of videosOfProductToBeDeleted) {
+      await videoServices.deleteVideo(video._id);
+    }
 
     // const deleteProduct = await Product.findByIdAndDelete(productId);
-    const product = await Product.findByIdAndUpdate(
-      productId,
-      { is_discontinued: true },
-      { new: true }
-    ).exec();
+    await product.updateOne({ is_discontinued: true }, { new: true }).exec();
 
     return product;
   }

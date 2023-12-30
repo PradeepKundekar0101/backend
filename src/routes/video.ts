@@ -12,7 +12,7 @@ const router = Router();
 
 router.post("/", createVideos);
 router.get("/", getAllVideos);
-router.get("/suggestions", getVideosSuggestions);
+router.post("/suggestions", getVideosSuggestions);
 router.get("/product/:productId", getAllVideosByProductId);
 router.get("/:videoId", getVideoById);
 router.delete("/:videoId", deleteVideo);

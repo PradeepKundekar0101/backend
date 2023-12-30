@@ -33,6 +33,9 @@ CategorySchema.pre(/^find/, function (next) {
   // @ts-ignore
   this.find({ is_discontinued: false });
 
+  // @ts-ignore
+  this.select("-__v -is_discontinued -createdAt -updatedAt");
+
   next();
 });
 

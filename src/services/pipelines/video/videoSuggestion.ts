@@ -13,7 +13,7 @@ export const videoRankingPipeline = (productId: string, tags: string[]) => {
       $match: {
         productId: queryProduct,
         tags: { $in: queryTags },
-        is_active: true,
+        is_discontinued: false,
       },
     },
     {
