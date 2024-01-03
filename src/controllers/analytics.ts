@@ -1,12 +1,48 @@
 import { Request, Response, NextFunction } from "express";
+import IPinfoWrapper, {
+  ApiLimitError,
+  IPinfo,
+  LruCache,
+  Options,
+} from "node-ipinfo";
 import AppError from "../utils/AppError";
 import { catchAsync, sendResponse } from "../utils/api.utils";
 import analyticsService from "../services/analytics";
 
+// Cache for IPinfo with a max size of 5000 and a TTL of 2 days:
+const cacheOptions: Options<string, any> = {
+  max: 5000,
+  ttl: 2 * 24 * 1000 * 60 * 60,
+};
+
+const cache = new LruCache(cacheOptions);
+
+const ipinfo = new IPinfoWrapper(process.env.IPINFO_ACCESS_TOKEN!, cache);
+
 // Create a new analytics:
 export const createAnalytics = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const analytics = await analyticsService.createAnalytics(req.body);
+    // Get the IP address of the user:
+    const userIP = req.ip || "0.0.0.0";
+    let location = "Unknown";
+
+    try {
+      // Get the location of the user:
+      const ipDetails: IPinfo = await ipinfo.lookupIp(userIP);
+      location = ipDetails.country || "Unknown";
+    } catch (err) {
+      if (err instanceof ApiLimitError) {
+        console.log("IP_Info API limit reached");
+      } else {
+        console.log(err);
+      }
+    }
+
+    const analytics = await analyticsService.createAnalytics({
+      ...req.body,
+      sessionId: userIP,
+      location: location,
+    });
 
     sendResponse(res, 201, { analytics });
   }

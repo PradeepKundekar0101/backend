@@ -2,6 +2,7 @@ import express, { response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { mongoConnect } from "./services/mongo.connect";
+dotenv.config();
 
 // Routes:
 import tagRoutes from "./routes/tag";
@@ -15,7 +16,6 @@ import globalErrorHandler from "./controllers/error";
 import { errorInterceptor, responseInterceptor } from "./middlewares/logger";
 import path from "path";
 
-dotenv.config();
 // Connect to MongoDB:
 mongoConnect(process.env.MONGO_URI!);
 
@@ -24,6 +24,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.set("trust proxy", true);
 
 // CORS:
 app.use(
@@ -76,7 +77,7 @@ process.on("uncaughtException", (err: any) => {
 });
 
 // Port:
-const PORT =  5000;
+const PORT = process.env.PORT || 5000;
 
 // Listen:
 const server = app.listen(PORT, () =>
