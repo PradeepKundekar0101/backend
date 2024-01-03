@@ -11,6 +11,7 @@ import analyticsRoutes from "./routes/analytics";
 import productRoutes from "./routes/product";
 import videoRoutes from "./routes/video";
 import helpdeskRoutes from "./routes/helpdesk";
+import zendeskRoutes from "./routes/zendesk";
 
 import globalErrorHandler from "./controllers/error";
 import { errorInterceptor, responseInterceptor } from "./middlewares/logger";
@@ -41,7 +42,7 @@ app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/video", videoRoutes);
 app.use("/api/v1/helpdesk", helpdeskRoutes);
-app.use("/api/v1/video", videoRoutes);
+app.use("/api/v1/zendesk", zendeskRoutes);
 
 // Default route:
 app.get("/", (req, res) => {
