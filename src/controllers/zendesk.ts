@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import AppError from "../utils/AppError";
-import { catchAsync } from "../utils/api.utils";
+import { catchAsync, sendResponse } from "../utils/api.utils";
 import zendeskService from "../services/zendesk";
 
 export const createTicket = catchAsync(
@@ -13,6 +13,6 @@ export const createTicket = catchAsync(
 
     const ticket = await zendeskService.createTicket(name, email, description);
 
-    res.status(201).json({ ticket });
+    sendResponse(res, 201, { ticket });
   }
 );
