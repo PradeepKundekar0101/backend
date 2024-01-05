@@ -1,3 +1,79 @@
+<<<<<<< HEAD
+[
+  {
+    "_id": {
+      "$oid": "658fcf55cc6d233e69ae4609"
+    },
+    "title": "Exchanges",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "https://support.boat-lifestyle.com/articles/popular-help-topics/exchanges/6242c50c9f565e24683a4953",
+    "is_discontinued": false,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "658fcfe6c4921fc00739b4da"
+    },
+    "title": "Order Related",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "https://support.boat-lifestyle.com/articles/popular-help-topics/order-related/6242c50f8bf57c0729efaeb5",
+    "is_discontinued": false,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "658fcfffc4921fc00739b4dc"
+    },
+    "title": "Shipping",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "https://support.boat-lifestyle.com/articles/popular-help-topics/shipping/6242c5109f565e24683a4954",
+    "is_discontinued": false,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "658fd015c4921fc00739b4de"
+    },
+    "title": "Payment Issue",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "https://support.boat-lifestyle.com/articles/popular-help-topics/payment-issues/6242c5139f565e24683a4955",
+    "is_discontinued": false,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "658fd03dc4921fc00739b4e1"
+    },
+    "title": "Warranty",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "/category",
+    "is_discontinued": false,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "65978c350aebe2e6accc71a7"
+    },
+    "title": "Product Related",
+    "image_name": "uploads/helpdesk/image-1704456650262",
+    "image_url": "",
+    "url": "/category",
+    "is_discontinued": false,
+    "createdAt": {
+      "$date": "2024-01-05T04:57:25.883Z"
+    },
+    "updatedAt": {
+      "$date": "2024-01-05T04:57:25.883Z"
+    },
+    "__v": 0
+  }
+]
+=======
 [{
   "_id": {
     "$oid": "658fcf55cc6d233e69ae4609"
@@ -58,3 +134,4 @@
   },
   "__v": 0
 }]
+>>>>>>> 5630d633337211706ad093c3e3a6e5091f83548e
