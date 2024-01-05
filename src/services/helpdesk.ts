@@ -40,7 +40,7 @@ class HelpDeskService {
     helpdeskId: string,
     helpdeskData: IHelpDesk,
     helpdeskImage: Express.Multer.File | undefined
-  ): Promise<IUpdatedHelpDesk | null> {
+  ) {
     let imageName: string | undefined;
     if (helpdeskImage) {
       imageName = await putObjectURL(helpdeskImage, "helpdesk");
@@ -56,7 +56,7 @@ class HelpDeskService {
     return helpdesk;
   }
 
-  async deleteHelpDesk(helpdeskId: string): Promise<IUpdatedHelpDesk | null> {
+  async deleteHelpDesk(helpdeskId: string) {
     //Delete the Image from s3
     const helpdeskFound = await HelpDesk.findById(helpdeskId);
     if (!helpdeskFound) return null;
