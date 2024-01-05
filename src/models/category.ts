@@ -2,6 +2,7 @@ import { Schema, model } from "mongoose";
 
 export interface ICategory {
   name: string;
+  image_name:string;
   image_url: string;
   is_discontinued: boolean;
   createdAt?: Date;
@@ -15,9 +16,15 @@ const CategorySchema = new Schema<ICategory>(
       required: [true, "Category name is required"],
       unique: true,
     },
-    image_url: {
+    //It is the name by which the image will be stored in the s3
+    image_name:{
       type: String,
-      required: [true, "Category image is required"],
+      required: [true, "Category image name is required"],
+    },
+    //This field will be dynamically generated (pre signed url)
+    image_url: {
+      default:"",
+      type: String,
     },
     is_discontinued: {
       type: Boolean,
@@ -34,7 +41,7 @@ CategorySchema.pre(/^find/, function (next) {
   this.find({ is_discontinued: false });
 
   // @ts-ignore
-  this.select("-__v -is_discontinued -createdAt -updatedAt");
+  this.select("-__v -is_discontinued");
 
   next();
 });

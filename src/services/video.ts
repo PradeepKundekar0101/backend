@@ -7,7 +7,7 @@ import { videoRankingPipeline } from "./pipelines/video/videoSuggestion";
 type IUpdatedVideo = Document<unknown, {}, IVideo>;
 
 class VideoService {
-  async createVideos(videoData: IVideo): Promise<IVideo> {
+  async createVideo(videoData: IVideo): Promise<IVideo> {
     const video = await Video.create(videoData);
 
     // Find the product and update the is_active status:

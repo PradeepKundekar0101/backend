@@ -2,12 +2,16 @@ import { Request, Response, NextFunction } from "express";
 import AppError from "../utils/AppError";
 import { catchAsync, sendResponse } from "../utils/api.utils";
 import categoryService from "../services/category";
+import Category from "../models/category";
 
-// Create a new category:
 export const createCategory = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const category = await categoryService.createCategory(req.body);
-
+    if (!req.file) {
+      return sendResponse(res, 400, {
+        message: "File is required for creating a category",
+      });
+    }
+    const category = await categoryService.createCategory(req.body, req.file);
     sendResponse(res, 201, { category });
   }
 );
@@ -24,19 +28,15 @@ export const getAllCategories = catchAsync(
 export const getCategoryById = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { categoryId } = req.params;
-
     if (!categoryId) {
       return next(new AppError(400, "Please provide categoryId"));
     }
-
     const category = await categoryService.getCategoryById(categoryId);
-
     if (!category) {
       return next(
         new AppError(404, `Category with id ${categoryId} not found`)
       );
     }
-
     sendResponse(res, 200, { category });
   }
 );
@@ -45,19 +45,19 @@ export const getCategoryById = catchAsync(
 export const updateCategory = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { categoryId } = req.params;
-
     if (!categoryId) {
       return next(new AppError(400, "Please provide categoryId"));
     }
-
-    const category = await categoryService.updateCategory(categoryId, req.body);
-
+    const category = await categoryService.updateCategory(
+      categoryId,
+      req.body,
+      req.file
+    );
     if (!category) {
       return next(
         new AppError(404, `Category with id ${categoryId} not found`)
       );
     }
-
     sendResponse(res, 200, { category });
   }
 );

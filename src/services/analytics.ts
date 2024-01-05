@@ -22,7 +22,6 @@ class AnalyticsServices {
     const totalProducts = await Product.countDocuments();
 
     // Get total videos watched:
-
     return { ...dashboardStats[0], totalCategories, totalProducts };
   }
 
@@ -48,7 +47,6 @@ class AnalyticsServices {
   // Get Stats of all Categories:
   async getAllCategoryStats(): Promise<any> {
     const categoryStats = await Category.aggregate(allCategoryStatsPipeline());
-
     return categoryStats;
   }
 

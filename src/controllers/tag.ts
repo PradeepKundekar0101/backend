@@ -2,6 +2,16 @@ import { Request, Response, NextFunction } from "express";
 import tagServices from "../services/tag";
 import AppError from "../utils/AppError";
 import { catchAsync, sendResponse } from "../utils/api.utils";
+import Tag from "../models/tag";
+// Update a tag:
+export const getTagById = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { tagId } = req.params;
+   const tag = await Tag.findById(tagId);
+    sendResponse(res, 200, { tag });
+  }
+);
+
 
 // Update a tag:
 export const updateTag = catchAsync(

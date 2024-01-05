@@ -177,19 +177,11 @@ export const specificProductStatsPipeline = (productId: string) => {
           totalVisitors: "$stats.totalVisitors",
           totalTicketsRaised: "$stats.totalTicketsRaised",
           systemEfficiency: {
-            $multiply: [
+            $divide: [
               {
-                $divide: [
-                  {
-                    $subtract: [
-                      "$stats.totalIssues",
-                      "$stats.totalTicketsRaised",
-                    ],
-                  },
-                  "$stats.totalIssues",
-                ],
+                $subtract: ["$stats.totalIssues", "$stats.totalTicketsRaised"],
               },
-              100,
+              "$stats.totalIssues",
             ],
           },
         },

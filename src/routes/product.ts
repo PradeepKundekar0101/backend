@@ -7,15 +7,16 @@ import {
   updateProduct,
   updateProductWithTags,
 } from "../controllers/product";
+import { upload } from "../config/multerupload";
 
 const router = Router();
 
 //Product routes
-router.post("/", createProduct);
+router.post("/",upload.single("image"), createProduct);
 router.get("/", getAllProducts);
 router.get("/:productId", getProductById);
-router.patch("/:productId", updateProduct);
-router.patch("/:productId/tags", updateProductWithTags);
+router.patch("/:productId",upload.single("image"), updateProduct);
+router.put("/:productId/tags", updateProductWithTags);
 router.delete("/:productId", deleteProduct);
 
 export default router;

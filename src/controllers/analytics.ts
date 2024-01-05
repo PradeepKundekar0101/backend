@@ -95,7 +95,6 @@ export const getOverallStats = catchAsync(
 export const getAllCategoryStats = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const categoryStats = await analyticsService.getAllCategoryStats();
-
     sendResponse(res, 200, { categoryStats });
   }
 );

@@ -73,14 +73,9 @@ export const allCategoryStatsPipeline = () => {
   statsAggPipeline.push({
     $addFields: {
       systemEfficiency: {
-        $multiply: [
-          {
-            $divide: [
-              { $subtract: ["$totalIssues", "$totalTicketsRaised"] },
-              "$totalIssues",
-            ],
-          },
-          100,
+        $divide: [
+          { $subtract: ["$totalIssues", "$totalTicketsRaised"] },
+          "$totalIssues",
         ],
       },
     },

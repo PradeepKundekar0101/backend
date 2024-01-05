@@ -15,7 +15,6 @@ const VideoSchema = new Schema<IVideo>(
     videoId: {
       type: String,
       required: [true, "Video ID is required"],
-      unique: true,
     },
     productId: {
       type: mongoose.Schema.Types.ObjectId,

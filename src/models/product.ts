@@ -1,7 +1,8 @@
 import mongoose, { Schema, model, ObjectId, Document } from "mongoose";
-export interface IProduct extends Document {
+export interface IProduct {
   name: string;
   image_url: string;
+  image_name: string;
   category: ObjectId;
   tags: ObjectId[];
   is_active: boolean;
@@ -17,9 +18,13 @@ const ProductSchema = new Schema<IProduct>(
       required: [true, "Product name is required"],
       unique: true,
     },
+    image_name: {
+      type: String,
+      required: [true, "Product image name is required"],
+    },
     image_url: {
       type: String,
-      required: [true, "Product image is required"],
+      default: "",
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
@@ -60,7 +65,7 @@ ProductSchema.pre(/^find/, function (next) {
   });
 
   // @ts-ignore
-  this.select("-__v -is_active -is_discontinued -createdAt -updatedAt");
+  this.select("-__v -is_active -is_discontinued");
   next();
 });
 

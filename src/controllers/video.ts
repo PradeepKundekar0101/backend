@@ -3,20 +3,49 @@ import AppError from "../utils/AppError";
 import { catchAsync, sendResponse } from "../utils/api.utils";
 import videoService from "../services/video";
 import validator from "validator";
+import Video, { IVideo } from "../models/video";
 
 //Create Videos
 export const createVideos = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { videos } = req.body;
-
     if (!videos || videos.length == 0) {
       return next(new AppError(400, "Please provide atleast one video"));
     }
     let response = [];
     for (const video of videos) {
-      response.push(await videoService.createVideos(video));
+      response.push(await videoService.createVideo(video));
     }
-    sendResponse(res, 201, { response });
+    sendResponse(res, 201, {videos:response });
+  }
+);
+//Update Videos
+export const updateVideos = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { videos } = req.body;
+    if (!videos || videos.length == 0) {
+      return next(new AppError(400, "Please provide atleast one video"));
+    }
+    const existingVideos = await videoService.getVideosByProductId(videos[0].productId);
+
+
+  existingVideos.forEach(async (existingVideo) => {
+    const foundVideo = videos.find((video:IVideo) => video.videoId === existingVideo.videoId);
+    if (!foundVideo)
+    {
+      await Video.findByIdAndUpdate(existingVideo._id,  { is_discontinued: true },{ new: true });
+    }else{
+      await Video.findByIdAndUpdate(existingVideo._id,{tags:foundVideo.tags});
+
+    }
+  });
+  videos.forEach(async(vid:any)=>{
+      const foundVideo = existingVideos.find((video)=>video.videoId===vid.videoId);
+      if(!foundVideo){
+        await videoService.createVideo(vid);
+      }
+  })
+    sendResponse(res, 201, {videos:"Updated!"});
   }
 );
 
@@ -32,7 +61,7 @@ export const createVideo = catchAsync(
       return next(new AppError(400, "Please provide atleast one tag"));
     }
 
-    const video = await videoService.createVideos(req.body);
+    const video = await videoService.createVideo(req.body);
     sendResponse(res, 201, { video });
   }
 );

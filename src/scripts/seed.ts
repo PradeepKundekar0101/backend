@@ -1,5 +1,6 @@
 import { mongoConnect } from "../services/mongo.connect";
 import dotenv from "dotenv";
+import helpdesk from "../data/seed.helpdesks.json";
 import categories from "../data/seed.categories.json";
 import products from "../data/seed.products.json";
 import tags from "../data/seed.tags.json";
@@ -11,6 +12,7 @@ dotenv.config();
 
 mongoConnect(process.env.MONGO_URI!);
 
+import Helpdesk from "../models/helpdesk";
 import Category from "../models/category";
 import Analytics from "../models/analytics";
 import Tag from "../models/tag";
@@ -32,6 +34,23 @@ function convertDate(obj: any) {
   }
   return obj;
 }
+
+// Seed Helpdesk:
+const seedHelpdesk = async () => {
+  try {
+    await Helpdesk.deleteMany({});
+    const data = helpdesk.map((helpdesk) => ({
+      ...helpdesk,
+      _id: convertObjectId(helpdesk._id),
+      createdAt: convertDate(helpdesk.createdAt),
+      updatedAt: convertDate(helpdesk.updatedAt),
+    }));
+    await Helpdesk.insertMany(data);
+    console.log("Helpdesk seeded");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // Seed categories:
 const seedCategories = async () => {
@@ -137,11 +156,12 @@ const seedAnalytics = async () => {
 
 // Run all seed functions:
 const seed = async () => {
-  await seedCategories();
-  await seedTags();
-  await seedProducts();
-  await seedVideos();
-  await seedAnalytics();
+  await seedHelpdesk();
+  // await seedCategories();
+  // await seedTags();
+  // await seedProducts();
+  // await seedVideos();
+  // await seedAnalytics();
   mongoose.disconnect();
 };
 

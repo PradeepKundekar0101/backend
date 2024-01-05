@@ -6,11 +6,13 @@ import {
   getAllVideosByProductId,
   getVideoById,
   getVideosSuggestions,
+  updateVideos
 } from "../controllers/video";
 
 const router = Router();
 
 router.post("/", createVideos);
+router.put("/",updateVideos);
 router.get("/", getAllVideos);
 router.post("/suggestions", getVideosSuggestions);
 router.get("/product/:productId", getAllVideosByProductId);

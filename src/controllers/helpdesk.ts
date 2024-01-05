@@ -6,7 +6,10 @@ import helpdeskService from "../services/helpdesk";
 // Create a new helpdesk:
 export const createHelpDesk = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const helpdesk = await helpdeskService.createHelpDesk(req.body);
+    if (!req.file) {
+      return sendResponse(res, 400, { message: "File is required for creating a HelpDesk" });
+    }
+    const helpdesk = await helpdeskService.createHelpDesk(req.body,req.file);
     sendResponse(res, 201, { helpdesk });
   }
 );
@@ -44,7 +47,7 @@ export const updateHelpDesk = catchAsync(
       return next(new AppError(400, "Please provide helpdeskId"));
     }
 
-    const helpdesk = await helpdeskService.updateHelpDesk(helpdeskId, req.body);
+    const helpdesk = await helpdeskService.updateHelpDesk(helpdeskId, req.body,req.file);
 
     if (!helpdesk) {
       return next(
